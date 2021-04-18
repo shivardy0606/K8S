@@ -34,11 +34,11 @@
 1. Create a Route53 private hosted zone (you can create Public hosted zone if you have a domain)
 1. create an S3 bucket 
    ```sh
-    aws s3 mb s3://praveen.k8s.boc.in
+    aws s3 mb s3://shiva.k8s.boc.in
    ```
 1. Expose environment variable:
    ```sh 
-    export KOPS_STATE_STORE=s3://praveen.k8s.boc.in
+    export KOPS_STATE_STORE=s3://shiva.k8s.boc.in
    ```
 1. Create sshkeys before creating cluster
    ```sh
@@ -46,11 +46,11 @@
    ```
 1. Create kubernetes cluster definitions on S3 bucket 
    ```sh 
-    kops create cluster --cloud=aws --zones=ap-southeast-1b --name=praveen.k8s.boc.in --dns-zone=boc.in --dns private
+    kops create cluster --cloud=aws --zones=ap-southeast-1b --name=shiva.k8s.boc.in --dns-zone=boc.in --dns private
     ```
 1. Create kubernetes cluser
     ```sh 
-      kops update cluster praveen.k8s.boc.in --yes
+      kops update cluster shiva.k8s.boc.in --yes
      ```
 1. Validate your cluster 
      ```sh 
@@ -77,5 +77,5 @@
     ```
  1. To delete cluster
     ```sh
-     kops delete cluster praveen.k8s.boc.in --yes
+     kops delete cluster shiva.k8s.boc.in --yes
     ```
